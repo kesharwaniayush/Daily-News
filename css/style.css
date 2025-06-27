@@ -1,0 +1,230 @@
+@import url('https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&family=Source+Sans+3:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    /* font-family: 'Alegreya', serif; */
+    font-family: 'Source Sans 3', sans-serif;
+}
+
+body {
+    background-color: rgba(237, 255, 249, 0.278);
+}
+
+.title {
+    font-size: 3rem;
+    font-family: 'Alegreya', serif;
+    color: #e4ffde;
+    /* text-decoration: underline ; */
+}
+
+.subtitle {
+    font-size: 1rem;
+}
+
+.progress-bar-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(237, 255, 249, 0.278);
+    z-index: 1000;
+    display: none;
+    /* Initially hide the progress bar */
+}
+
+.progress-bar {
+    border: 10px solid #f3f3f3;
+    /* Change the border style to dotted */
+    border-top: 10px solid #01442c;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+img {
+    width: 100%;
+    height: 30vh;
+    object-fit: cover;
+}
+
+.heading-container {
+    background-color: rgb(1, 68, 44);
+    color: #ffffff;
+    font-size: 2.5em;
+    padding: 0.8em 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 10px 50px 0 rgba(2, 0, 31, 0.3);
+    z-index: 1;
+}
+
+.heading-container h4 {
+    font-weight: 800;
+    /* font-size: 40px; */
+    /* letter-spacing: 5px; */
+}
+
+.options-container {
+    margin: 10em 0 2em 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1em;
+    padding-top: 2em;
+    text-align: center;
+}
+
+.option {
+    background-color: #d5d5d5;
+    border: none;
+    font-weight: normal;
+    cursor: pointer;
+    padding: 0.8em 1.5em;
+    border-radius: 0.5em;
+    border: none;
+    text-transform: capitalize;
+}
+
+.option:hover {
+    background-color: rgb(129, 188, 167);
+    color: white;
+    transform: scale(1.1);
+    /* Increase the scale to zoom in (1.2 means 120%) */
+    transition: transform 0.3s ease;
+    /* Add a smooth transition */
+}
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 1em;
+}
+
+.news-card {
+    display: grid;
+    position: relative;
+    grid-template-rows: auto 1fr;
+    box-shadow: 0 0 15px rgba(85, 85, 85, 0.2);
+    margin: 1em 0;
+    border-radius: 15px;
+}
+
+.news-card:hover {
+    transform: scale(1.03);
+    /* Increase the scale to zoom in (1.2 means 120%) */
+    transition: transform 0.3s ease;
+    /* Add a smooth transition */
+}
+
+.news-card img {
+    border-radius: 15px 15px 0 0;
+}
+
+.news-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1em;
+    font-size: 15px;
+}
+
+.news-title {
+    font-weight: 800;
+    color: #0b0028;
+}
+
+.news-description {
+    color: #6f6f6f;
+    text-align: justify;
+    margin: 0.8em 0 1em 0;
+}
+
+.publish-date {
+    font-size: 0.8em;
+    padding: 0;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    margin: 0;
+}
+
+.view-button {
+    position: relative;
+    text-decoration: none;
+    background-color: rgb(1, 68, 44);
+    color: #ffffff;
+    width: 7em;
+    font-size: 0.9em;
+    text-align: center;
+    padding: 0.9em 0.3em;
+    border-radius: 5px;
+}
+
+.view-button:hover {
+    background-color: rgb(129, 188, 167);
+    color: white;
+    transform: scale(1.1);
+    /* Increase the scale to zoom in (1.2 means 120%) */
+    transition: transform 0.3s ease;
+    /* Add a smooth transition */
+}
+
+.active {
+    background-color: rgb(1, 68, 44);
+    color: #ffffff;
+    font-weight: normal;
+}
+
+#myBtn {
+    display: none; /* Hidden by default */
+    position: fixed; /* Fixed/sticky position */
+    width: 45px;
+    height: 45px;
+    align-items: center;
+    justify-content: center;
+    bottom: 20px; /* Place the button at the bottom of the page */
+    right: 30px; /* Place the button 30px from the right */
+    z-index: 99; /* Make sure it does not overlap */
+    border: none; /* Remove borders */
+    outline: none; /* Remove outline */
+    background-color: rgb(1, 68, 44); /* Set a background color */
+    color: white; /* Text color */
+    cursor: pointer; /* Add a mouse pointer on hover */
+    padding: 15px; /* Some padding */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 18px; /* Increase font size */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Add transitions */
+  }
+  
+  #myBtn:hover {
+    background-color: rgb(129, 188, 167); /* Add a dark-grey background on hover */
+    transform: scale(1.1); /* Zoom in slightly on hover */
+  }
+  
+
+
+@media only screen and (max-width: 768px) {
+    .container {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
